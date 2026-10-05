@@ -32,6 +32,38 @@ function addFromCard(card){
   addToCart({name:card.dataset.product,price:+card.dataset.price,color:card.dataset.color||"Black",size:"M",image:card.dataset.image});
 }
 
+const imageViewer = $("#imageViewer");
+const imageViewerImage = imageViewer.querySelector("img");
+const imageViewerCaption = $(".image-viewer-caption");
+
+function openImageViewer(image){
+  imageViewerImage.src = image.currentSrc || image.src;
+  imageViewerImage.alt = image.alt;
+  imageViewerCaption.textContent = image.alt;
+  imageViewer.showModal();
+}
+
+$$(".product-image img, .feature-image img, .hero-media img").forEach(image=>{
+  image.tabIndex = 0;
+  image.setAttribute("role","button");
+  image.setAttribute("aria-label",`Vergroot foto: ${image.alt}`);
+  image.addEventListener("click",()=>openImageViewer(image));
+  image.addEventListener("keydown",event=>{
+    if(event.key==="Enter"||event.key===" "){
+      event.preventDefault();
+      openImageViewer(image);
+    }
+  });
+});
+
+$(".image-viewer-close").addEventListener("click",()=>imageViewer.close());
+imageViewer.addEventListener("click",event=>{
+  if(event.target===imageViewer) imageViewer.close();
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"&&imageViewer.open) imageViewer.close();
+});
+
 $$(".quick-add").forEach(btn=>btn.addEventListener("click",e=>{e.preventDefault();addFromCard(btn.closest(".product-card"));}));
 $("[data-feature-add]").onclick=()=>addToCart({name:"Moon Zip — Black",price:35,color:"Black",size:"M",image:"assets/moonstyle black.jpg"});
 $$("[data-open-cart]").forEach(x=>x.onclick=openCart);
