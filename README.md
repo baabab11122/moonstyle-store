@@ -38,7 +38,7 @@ De productfoto's in `assets/` zijn de door jou aangeleverde afbeeldingen.
 - Moon - pants beige
 
 ## Matching outfits
-- Grey, Brown, Cream, and Beige hoodie + pants sets are listed as separate outfit products.
-- Each matching outfit is priced at €50.
+- Grey, Brown, Cream, Beige, and Black complete sets use their dedicated outfit photos.
+- Each matching outfit is listed as a separate product and priced at €50.
 
 The four supplied product images are stored in `assets/moon-zip-*.jpg`.
