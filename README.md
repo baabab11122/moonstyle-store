@@ -5,7 +5,7 @@ Dit is een mobile-first, premium static e-commerce prototype voor MOONSTYLE.
 ## Bestanden
 - index.html — complete storefront
 - styles.css — responsive design system
-- script.js — filters, cart, newsletter popup, search, size guide
+- script.js — filters, cart, local demo account, newsletter popup, search, size guide
 - assets/moonstyle-cream.webp — aangeleverde productfoto
 - assets/moonstyle-black.webp — aangeleverde productfoto
 
@@ -15,6 +15,10 @@ Voor een echte Shopify checkout kun je `checkoutBtn` in `script.js` koppelen aan
 - Shopify Storefront API Cart
 - Shopify Cart API / cart permalink
 - of een eigen backend die de Shopify checkout URL teruggeeft.
+
+## Demo-account
+De accountknop opent een lokale profiel-demo waarin een naam en e-mailadres op dit apparaat worden opgeslagen.
+Dit is geen beveiligde login en de gegevens worden niet met andere apparaten gesynchroniseerd. Voor echte klantaccounts is een account-backend of een Shopify-koppeling nodig.
 
 ## Live zetten
 Upload de bestanden naar je hosting of Vercel/Netlify. Voor productie:

@@ -44,7 +44,7 @@
         Search
       </button>
 
-      <button class="text-action account-btn">
+      <button class="text-action account-btn" type="button" data-open-account>
         Account
       </button>
 
@@ -61,6 +61,7 @@
     <a href="#shop">Shop</a>
     <a href="#collection">Collectie</a>
     <a href="#about">Over Ons</a>
+    <button class="mobile-account-btn" type="button" data-open-account>Account</button>
     <a href="#footer">Contact</a>
   </div>
 
@@ -1321,6 +1322,33 @@
 
   </div>
 
+  <!-- DEMO ACCOUNT -->
+  <div class="overlay" id="accountOverlay">
+    <section class="modal account-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <button class="close" type="button" data-close-account aria-label="Accountvenster sluiten">×</button>
+      <p class="eyebrow">Moonstyle account</p>
+      <h2 id="accountTitle">Jouw account</h2>
+      <p class="micro account-notice">
+        Dit is een demo-account dat alleen op dit apparaat wordt opgeslagen. Er is geen wachtwoord,
+        beveiligde login of synchronisatie met andere apparaten.
+      </p>
+
+      <form id="demoAccountForm">
+        <label for="accountName">Naam</label>
+        <input id="accountName" name="name" type="text" autocomplete="name" required>
+        <label for="accountEmail">E-mailadres</label>
+        <input id="accountEmail" name="email" type="email" autocomplete="email" required>
+        <button class="btn btn-dark full" type="submit">Account opslaan</button>
+      </form>
+
+      <div id="accountProfile" hidden>
+        <p>Ingelogd als <strong id="accountProfileName"></strong></p>
+        <p id="accountProfileEmail"></p>
+        <button class="btn btn-dark full" id="accountSignOut" type="button">Account verwijderen</button>
+      </div>
+      <p class="micro account-status" id="accountStatus" aria-live="polite"></p>
+    </section>
+  </div>
 
   <!-- JAVASCRIPT -->
   <script src="script.js"></script>
