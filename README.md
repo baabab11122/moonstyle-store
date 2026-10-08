@@ -24,8 +24,9 @@ belastingen en betaalprovider correct zijn ingesteld. Test een bestelling eerst
 met Shopify's testmodus voordat je de website breed publiceert.
 
 ## Klantaccounts
-De links "Inloggen via e-mail" en "Registreren via e-mail" openen Shopify's beveiligde
-klantaccountpagina op `b51isi-cm.myshopify.com`. Bij de nieuwe Shopify-
+De links "Inloggen via e-mail" en "Registreren via e-mail" openen in een nieuw
+tabblad Shopify's beveiligde klantaccountpagina op `b51isi-cm.myshopify.com`.
+Bij de nieuwe Shopify-
 klantaccounts kunnen bestaande klanten inloggen en nieuwe klanten hun account
 aanmaken vanuit dezelfde pagina. Shopify verzorgt de authenticatie; er worden
 geen wachtwoorden of profielgegevens op deze statische website opgeslagen.
