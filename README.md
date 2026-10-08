@@ -24,10 +24,12 @@ belastingen en betaalprovider correct zijn ingesteld. Test een bestelling eerst
 met Shopify's testmodus voordat je de website breed publiceert.
 
 ## Klantaccounts
-De inloglinks openen Shopify's beveiligde klantlogin op `b51isi-cm.myshopify.com`.
-Shopify verzorgt de authenticatie en klantaccounts; er worden geen wachtwoorden of
-profielgegevens op deze statische website opgeslagen. Shopify-klantaccounts
-gebruiken e-mailverificatiecodes of de beschikbare Shopify-loginopties.
+De links "Inloggen" en "Account aanmaken" openen Shopify's beveiligde
+klantaccountpagina op `b51isi-cm.myshopify.com`. Bij de nieuwe Shopify-
+klantaccounts kunnen bestaande klanten inloggen en nieuwe klanten hun account
+aanmaken vanuit dezelfde pagina. Shopify verzorgt de authenticatie; er worden
+geen wachtwoorden of profielgegevens op deze statische website opgeslagen.
+Shopify gebruikt e-mailverificatiecodes of de beschikbare Shopify-loginopties.
 
 ## Live zetten
 Upload de bestanden naar je hosting of Vercel/Netlify. Voor productie:
