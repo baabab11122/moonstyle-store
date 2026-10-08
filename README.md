@@ -10,11 +10,18 @@ Dit is een mobile-first, premium static e-commerce prototype voor MOONSTYLE.
 - assets/moonstyle-black.webp — aangeleverde productfoto
 
 ## Shopify
-De frontend is voorbereid op een Shopify-koppeling. De huidige checkoutknop geeft een placeholder-melding.
-Voor een echte Shopify checkout kun je `checkoutBtn` in `script.js` koppelen aan:
-- Shopify Storefront API Cart
-- Shopify Cart API / cart permalink
-- of een eigen backend die de Shopify checkout URL teruggeeft.
+De productkaarten laten eerst de klant een maat kiezen. `script.js` koppelt de
+gekozen kleur- en maatcombinatie aan een Shopify-variant en stuurt de volledige
+winkelwagen naar de Shopify-checkout via een Shopify-cart permalink.
+
+De Shopify-catalogus bevat drie producten (hoodie, broek en complete set), elk
+met vijf kleuren en de maten XS–2XL. Voorraadtracking staat uit. De variant-ID's
+en winkel-URL in `script.js` zijn specifiek voor de MOONSTYLE Shopify-winkel.
+Pas ze aan als je producten, varianten of Shopify-winkel veranderen.
+
+Voor live bestellingen moet in Shopify ook de checkout, verzendtarieven,
+belastingen en betaalprovider correct zijn ingesteld. Test een bestelling eerst
+met Shopify's testmodus voordat je de website breed publiceert.
 
 ## Demo-account
 De accountknop opent een lokale profiel-demo waarin een naam en e-mailadres op dit apparaat worden opgeslagen.

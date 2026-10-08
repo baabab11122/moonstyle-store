@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20261006-account">
+  <link rel="stylesheet" href="styles.css?v=20261008-shopify">
 </head>
 
 <body>
@@ -1117,6 +1117,30 @@
   </dialog>
 
 
+  <!-- PRODUCT SIZE PICKER -->
+  <div class="overlay" id="variantOverlay">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="variantTitle">
+      <button class="close" type="button" data-close-variant aria-label="Productkeuze sluiten">×</button>
+      <p class="eyebrow">Kies je maat</p>
+      <h2 id="variantTitle">Product toevoegen</h2>
+      <p class="micro" id="variantProductName"></p>
+      <form id="variantForm">
+        <label for="variantSize">Maat</label>
+        <select id="variantSize" name="size" required>
+          <option value="">Kies een maat</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="2XL">2XL</option>
+        </select>
+        <button class="btn btn-dark full" type="submit">Toevoegen aan winkelwagen</button>
+      </form>
+      <p class="micro" id="variantStatus" aria-live="polite"></p>
+    </section>
+  </div>
+
   <!-- CART -->
   <div class="overlay" id="cartOverlay">
 
@@ -1158,11 +1182,11 @@
         class="btn btn-dark full"
         id="checkoutBtn"
       >
-        Checkout
+        Afrekenen via Shopify
       </button>
 
-      <p class="micro">
-        Shopify-ready: verbind hier je Shopify checkout/cart endpoint.
+      <p class="micro" id="checkoutStatus" aria-live="polite">
+        Je rekent veilig af via Shopify.
       </p>
 
     </div>
@@ -1351,7 +1375,7 @@
   </div>
 
   <!-- JAVASCRIPT -->
-  <script src="script.js?v=20261006-account"></script>
+  <script src="script.js?v=20261008-shopify"></script>
 
 </body>
 </html>
