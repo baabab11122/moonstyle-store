@@ -36,6 +36,9 @@ const SHOPIFY_VARIANTS = {
   }
 };
 
+localStorage.removeItem("moonstyle_demo_account_name");
+localStorage.removeItem("moonstyle_demo_account_email");
+
 let cart = JSON.parse(localStorage.getItem("moonstyle_cart") || "[]");
 let pendingProduct = null;
 
@@ -154,63 +157,6 @@ document.addEventListener("keydown",event=>{
 $$("[data-open-cart]").forEach(x=>x.onclick=openCart);
 $("[data-close-cart]").onclick=closeCart;
 $("#cartOverlay").addEventListener("click",e=>{if(e.target.id==="cartOverlay")closeCart()});
-
-const accountOverlay=$("#accountOverlay");
-const accountForm=$("#demoAccountForm");
-const accountProfile=$("#accountProfile");
-const accountStatus=$("#accountStatus");
-
-function renderAccount(){
-  const name=localStorage.getItem("moonstyle_demo_account_name");
-  const email=localStorage.getItem("moonstyle_demo_account_email");
-  const hasAccount=Boolean(name&&email);
-  accountForm.hidden=hasAccount;
-  accountProfile.hidden=!hasAccount;
-  accountStatus.textContent="";
-  if(hasAccount){
-    $("#accountProfileName").textContent=name;
-    $("#accountProfileEmail").textContent=email;
-  }
-}
-
-function openAccount(){
-  renderAccount();
-  accountOverlay.classList.add("open");
-  (accountForm.hidden?$("#accountSignOut"):$("#accountName")).focus();
-}
-
-$$("[data-open-account]").forEach(button=>button.addEventListener("click",()=>{
-  $("#mobileMenu").classList.remove("open");
-  openAccount();
-}));
-$$("[data-close-account]").forEach(button=>button.addEventListener("click",()=>accountOverlay.classList.remove("open")));
-accountOverlay.addEventListener("click",event=>{
-  if(event.target===accountOverlay) accountOverlay.classList.remove("open");
-});
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape"&&accountOverlay.classList.contains("open")) accountOverlay.classList.remove("open");
-});
-accountForm.addEventListener("submit",event=>{
-  event.preventDefault();
-  const name=$("#accountName").value.trim();
-  const email=$("#accountEmail").value.trim();
-  if(!name||!email){
-    accountStatus.textContent="Vul je naam en een geldig e-mailadres in.";
-    return;
-  }
-  localStorage.setItem("moonstyle_demo_account_name",name);
-  localStorage.setItem("moonstyle_demo_account_email",email);
-  renderAccount();
-  accountStatus.textContent="Je demo-account is op dit apparaat opgeslagen.";
-});
-$("#accountSignOut").addEventListener("click",()=>{
-  localStorage.removeItem("moonstyle_demo_account_name");
-  localStorage.removeItem("moonstyle_demo_account_email");
-  accountForm.reset();
-  renderAccount();
-  accountStatus.textContent="Het demo-account is van dit apparaat verwijderd.";
-  $("#accountName").focus();
-});
 
 $("[data-open-search]").onclick=()=>{$("#searchOverlay").classList.add("open");setTimeout(()=>$("#searchInput").focus(),100)};
 $("[data-close-search]").onclick=()=>$("#searchOverlay").classList.remove("open");
